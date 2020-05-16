@@ -15,13 +15,14 @@ class FormGroup extends React.Component {
 
 export default class AddBookForm extends React.Component {
   render() {
+    const formStyle = {visibility: this.props.formVisibility}
     return(
-      <form className='bookForm'>
+      <form className='bookForm' style={formStyle}>
 
         <div className='form-group'>
           <button className='close'>X</button>
         </div>
-        
+
         <FormGroup label='Title' />
         <FormGroup label='Author' />
         <FormGroup label='Published' />

@@ -1,6 +1,6 @@
 import React from 'react';
 import store from '../data-persistance/localStorage';
-import DeleteBtn from './DeleteButton';
+import DeleteBtn from './DeleteBook';
 
 
 class Table extends React.Component {
