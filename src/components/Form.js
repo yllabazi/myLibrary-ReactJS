@@ -1,36 +1,32 @@
 import React from 'react';
 
+class FormGroup extends React.Component {
+  render() {
+    return (
+      <div className='form-group'>
+        <label>
+          {this.props.label}: 
+          <input className='form-control' type='text' />
+        </label>
+      </div>
+    )
+  }
+}
+
 export default class AddBookForm extends React.Component {
   render() {
     return(
       <form className='bookForm'>
+
         <div className='form-group'>
           <button className='close'>X</button>
         </div>
-        <div className='form-group'>
-          <label>
-            Title: 
-            <input className='form-control' type='text' />
-          </label>
-        </div>
-        <div className='form-group'>
-          <label>
-            Author: 
-            <input className='form-control' type='text' />
-          </label>
-        </div>
-        <div className='form-group'>
-          <label>
-            Published: 
-            <input className='form-control' type='text' />
-          </label>
-        </div>
-        <div className='form-group'>
-          <label>
-            Pages: 
-            <input className='form-control' type='text' />
-          </label>
-        </div>
+        
+        <FormGroup label='Title' />
+        <FormGroup label='Author' />
+        <FormGroup label='Published' />
+        <FormGroup label='Pages' />
+        
         <div className='form-group'>
           <label>
             Have you read this book?
@@ -44,6 +40,7 @@ export default class AddBookForm extends React.Component {
             </div>
           </label>
         </div>
+
         <div>
           <button className='btn btn-info submit'>Add</button>
         </div>

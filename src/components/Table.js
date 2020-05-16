@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../data-persistance/localStorage';
+import DeleteBtn from './DeleteButton';
 
 
 class Table extends React.Component {
@@ -14,6 +15,7 @@ class Table extends React.Component {
           <td>{published}</td>
           <td>{pages}</td>
           <td>{read ? '✔' :'✗'}</td>
+          <td><DeleteBtn /></td>
         </tr>
       )
     });
