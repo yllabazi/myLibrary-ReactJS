@@ -6,7 +6,13 @@ class FormGroup extends React.Component {
       <div className='form-group'>
         <label>
           {this.props.label}: 
-          <input className='form-control' type='text' />
+          <input 
+            onChange={this.props.onChange}
+            name={this.props.name} 
+            className='form-control' 
+            type='text'
+            value={this.props.value}
+          />
         </label>
       </div>
     )
@@ -14,6 +20,22 @@ class FormGroup extends React.Component {
 }
 
 export default class AddBookForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      author: '',
+      published: '',
+      pages: '',
+      read: true
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({[e.target.name]: e.target.value})
+  }
+
   render() {
     const formStyle = {visibility: this.props.formVisibility}
     return(
@@ -23,20 +45,20 @@ export default class AddBookForm extends React.Component {
           <button onClick={this.props.closeFormClick} className='close'>X</button>
         </div>
 
-        <FormGroup label='Title' />
-        <FormGroup label='Author' />
-        <FormGroup label='Published' />
-        <FormGroup label='Pages' />
+        <FormGroup onChange={this.handleChange} name='title' label='Title' value={this.state.title}/>
+        <FormGroup onChange={this.handleChange} name='author' label='Author' value={this.state.author}/>
+        <FormGroup onChange={this.handleChange} name='published' label='Published' value={this.state.published}/>
+        <FormGroup onChange={this.handleChange} name='pages' label='Pages' value={this.state.pages}/>
         
-        <div className='form-group'>
+        <div onChange={this.handleChange} className='form-group'>
           <label>
             Have you read this book?
             <div className='form-check'>
-              <input className='form-check-input' type='radio' value='true' />
+              <input name='read' className='form-check-input' type='radio' value='true' />
               <label>Yes</label>
             </div>
             <div className='form-check'>
-                <input className='form-check-input' type='radio' value='false' />
+                <input name='read' className='form-check-input' type='radio' value='false' />
               <label>No</label>
             </div>
           </label>
