@@ -20,7 +20,7 @@ export default class AddBookForm extends React.Component {
       <form className='bookForm' style={formStyle}>
 
         <div className='form-group'>
-          <button className='close'>X</button>
+          <button onClick={this.props.closeFormClick} className='close'>X</button>
         </div>
 
         <FormGroup label='Title' />

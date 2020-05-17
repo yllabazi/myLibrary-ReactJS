@@ -11,12 +11,17 @@ export default class App extends React.Component {
       addBtnVisibility: 'visible',
     }
     this.handleAddBookClicked = this.handleAddBookClicked.bind(this);
+    this.handleCloseForm = this.handleCloseForm.bind(this);
   }
   
   handleAddBookClicked() {
     this.setState({formVisibility: 'visible', addBtnVisibility: 'hidden'})
   }
-  
+  handleCloseForm(e) {
+    e.preventDefault();
+    this.setState({formVisibility: 'hidden', addBtnVisibility: 'visible'})
+  }
+
   render() {
     return(
       <div>
@@ -27,7 +32,10 @@ export default class App extends React.Component {
           handleClick={this.handleAddBookClicked} 
           addBtnVisibility={this.state.addBtnVisibility} 
         />
-        <Form formVisibility={this.state.formVisibility} />
+        <Form 
+          formVisibility={this.state.formVisibility} 
+          closeFormClick={this.handleCloseForm}
+        />
       </div>
     )
   }

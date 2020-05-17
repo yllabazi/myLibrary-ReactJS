@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AddBtn extends React.Component {
+export default class AddBtn extends React.Component {
   render() {
     const btnStyle = {visibility: this.props.addBtnVisibility}
     return (
@@ -14,5 +14,3 @@ class AddBtn extends React.Component {
     )
   }
 }
-
-export default AddBtn;
