@@ -1,11 +1,10 @@
 import React from 'react';
-import store from '../data-persistance/localStorage';
 import DeleteBtn from './DeleteBook';
 
 
 class Table extends React.Component {
   render() {
-    const bookList = store.getBooks();
+    const bookList = this.props.bookList;
     const books = bookList.map((book) => {
       const {title, author, published, pages, read} = book
       return (

@@ -20,21 +20,6 @@ class FormGroup extends React.Component {
 }
 
 export default class AddBookForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      author: '',
-      published: '',
-      pages: '',
-      read: true
-    }
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState({[e.target.name]: e.target.value})
-  }
 
   render() {
     const formStyle = {visibility: this.props.formVisibility}
@@ -45,27 +30,27 @@ export default class AddBookForm extends React.Component {
           <button onClick={this.props.closeFormClick} className='close'>X</button>
         </div>
 
-        <FormGroup onChange={this.handleChange} name='title' label='Title' value={this.state.title}/>
-        <FormGroup onChange={this.handleChange} name='author' label='Author' value={this.state.author}/>
-        <FormGroup onChange={this.handleChange} name='published' label='Published' value={this.state.published}/>
-        <FormGroup onChange={this.handleChange} name='pages' label='Pages' value={this.state.pages}/>
+        <FormGroup onChange={this.props.handleFormChange} name='title' label='Title' value={this.props.title}/>
+        <FormGroup onChange={this.props.handleFormChange} name='author' label='Author' value={this.props.author}/>
+        <FormGroup onChange={this.props.handleFormChange} name='published' label='Published' value={this.props.published}/>
+        <FormGroup onChange={this.props.handleFormChange} name='pages' label='Pages' value={this.props.pages}/>
         
-        <div onChange={this.handleChange} className='form-group'>
+        <div onChange={this.props.handleFormChange} className='form-group'>
           <label>
             Have you read this book?
             <div className='form-check'>
-              <input name='read' className='form-check-input' type='radio' value='true' />
+              <input name='read' className='form-check-input' type='radio' value={true} />
               <label>Yes</label>
             </div>
             <div className='form-check'>
-                <input name='read' className='form-check-input' type='radio' value='false' />
+                <input name='read' className='form-check-input' type='radio' value={false} />
               <label>No</label>
             </div>
           </label>
         </div>
 
         <div>
-          <button className='btn btn-info submit'>Add</button>
+          <button onClick={this.props.addBook} className='btn btn-info submit'>Add</button>
         </div>
       
       </form>
