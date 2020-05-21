@@ -21,6 +21,8 @@ export default class App extends React.Component {
     this.handleCloseForm = this.handleCloseForm.bind(this);
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleReadStatus = this.handleReadStatus.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleAddBookClicked() {
@@ -54,13 +56,28 @@ export default class App extends React.Component {
       addBtnVisibility: "visible"
     })
   }
+  //work in progress
+  handleReadStatus(e) {
+    e.target.value = e.target.value === '✔' ? '✗' : '✔';
+    console.log(e.target.value);
+  }
+  //work in progress
+  handleDelete(id) {
+    store.deleteBook(id);
+    this.setState({books: store.getBooks()})
+  }
+
 
   render() {
     return (
       <div>
         <h1>myLibrary</h1>
         <h3>Add books that you've read or intend to read:</h3>
-        <Table bookList={this.state.books}/>
+        <Table 
+          handleReadStatus={this.handleReadStatus} 
+          bookList={this.state.books}
+          handleDelete={this.handleDelete}  
+        />
         <AddBtn
           handleClick={this.handleAddBookClicked}
           addBtnVisibility={this.state.addBtnVisibility}

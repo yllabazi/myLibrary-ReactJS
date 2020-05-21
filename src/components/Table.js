@@ -1,21 +1,38 @@
 import React from 'react';
 import DeleteBtn from './DeleteBook';
 
+class TableRow extends React.Component {
+  render() {
+    return(
+      <tr >
+        <td>{this.props.title}</td>
+        <td>{this.props.author}</td>
+        <td>{this.props.published}</td>
+        <td>{this.props.pages}</td>
+        <td onClick={this.props.handleReadStatus}>{this.props.read ? '✔' :'✗'}</td>
+        <td><DeleteBtn handleDelete={this.props.handleDelete} id={this.props.title} /></td>
+      </tr>
+    )
+  }
+}
+
 
 class Table extends React.Component {
   render() {
     const bookList = this.props.bookList;
-    const books = bookList.map((book) => {
+    const rows = bookList.map((book, index) => {
       const {title, author, published, pages, read} = book
       return (
-        <tr key={title}>
-          <td>{title}</td>
-          <td>{author}</td>
-          <td>{published}</td>
-          <td>{pages}</td>
-          <td>{read ? '✔' :'✗'}</td>
-          <td><DeleteBtn /></td>
-        </tr>
+        <TableRow  
+          key={index}
+          title={title}
+          author={author}
+          published={published}
+          pages={pages}
+          read={read}
+          handleReadStatus={this.props.handleReadStatus}
+          handleDelete={this.props.handleDelete}
+        />
       )
     });
     return (
@@ -30,7 +47,7 @@ class Table extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {books}
+          {rows}
         </tbody>
       </table>
     )
