@@ -9,7 +9,7 @@ class TableRow extends React.Component {
         <td>{this.props.author}</td>
         <td>{this.props.published}</td>
         <td>{this.props.pages}</td>
-        <td onClick={this.props.handleReadStatus}>{this.props.read ? '✔' :'✗'}</td>
+        <td style={{cursor: 'pointer'}} onClick={() => this.props.handleReadStatus(this.props.title)}>{this.props.read ? '✔' :'✗'}</td>
         <td><DeleteBtn handleDelete={this.props.handleDelete} id={this.props.title} /></td>
       </tr>
     )

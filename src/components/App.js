@@ -57,11 +57,10 @@ export default class App extends React.Component {
     })
   }
   //work in progress
-  handleReadStatus(e) {
-    e.target.value = e.target.value === '✔' ? '✗' : '✔';
-    console.log(e.target.value);
+  handleReadStatus(book) {
+    store.updateBook(book);
+    this.setState({books: store.getBooks()})
   }
-  //work in progress
   handleDelete(id) {
     store.deleteBook(id);
     this.setState({books: store.getBooks()})

@@ -12,6 +12,17 @@ export default class Storage {
     localStorage.setItem('Books', JSON.stringify(books));
   }
 
+  //update book's read status
+  static updateBook(book) {
+    const books = this.getBooks();
+    books.forEach((element) => {
+      if (element.title === book) {
+        element.read = !element.read;
+      }
+    });
+    localStorage.setItem('Books', JSON.stringify(books));
+  }
+
   //delete book
   static deleteBook(book) {
     const books = this.getBooks();
