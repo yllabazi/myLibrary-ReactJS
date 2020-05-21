@@ -2,6 +2,7 @@ export default class Storage {
   //get all books
   static getBooks() {
     let books = JSON.parse(localStorage.getItem('Books'));
+    console.log(books);
     return books;
   }
 

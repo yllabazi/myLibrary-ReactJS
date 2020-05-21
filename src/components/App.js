@@ -2,9 +2,8 @@ import React from "react";
 import AddBtn from "./AddBook";
 import Table from "./Table";
 import Form from "./Form";
-import store from '../data-persistance/localStorage'
-
-localStorage.setItem('Books', JSON.stringify([{title: "Power of Habit", author: "Charles Duhigg", published: 2012, pages: 371, read: true}]));
+import store from '../data-persistance/localStorage';
+import db from "../data-persistance/firebase";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,12 +11,12 @@ export default class App extends React.Component {
     this.state = {
       formVisibility: "hidden",
       addBtnVisibility: "visible",
-      title: '',
-      author: '',
-      published: '',
-      pages: '',
+      title: "",
+      author: "",
+      published: "",
+      pages: "",
       read: true,
-      books: store.getBooks(),
+      books: this.getBooks(),
     };
     this.handleAddBookClicked = this.handleAddBookClicked.bind(this);
     this.handleCloseForm = this.handleCloseForm.bind(this);
@@ -25,6 +24,27 @@ export default class App extends React.Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleReadStatus = this.handleReadStatus.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  getBooks() {
+    let books = [];
+    db.collection("Books")
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          const book = {
+            id: doc.id,
+            title: doc.data().title,
+            author: doc.data().author,
+            published: doc.data().published,
+            pages: doc.data().pages,
+            read: doc.data().read,
+          };
+          books.push(book);
+          this.setState({ books: books });
+        });
+      })
+    return books;
   }
 
   handleAddBookClicked() {
@@ -35,7 +55,7 @@ export default class App extends React.Component {
     this.setState({ formVisibility: "hidden", addBtnVisibility: "visible" });
   }
   handleFormChange(e) {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({ [e.target.name]: e.target.value });
   }
   handleFormSubmit(e) {
     e.preventDefault();
@@ -44,40 +64,38 @@ export default class App extends React.Component {
       author: this.state.author,
       published: this.state.published,
       pages: this.state.pages,
-      read: this.state.read
-    }
-    store.addBook(book)
+      read: this.state.read,
+    };
+    store.addBook(book);
     this.setState({
-      title: '',
-      author: '',
-      published: '',
-      pages: '',
+      title: "",
+      author: "",
+      published: "",
+      pages: "",
       read: true,
       books: store.getBooks(),
       formVisibility: "hidden",
-      addBtnVisibility: "visible"
-    })
+      addBtnVisibility: "visible",
+    });
   }
-  
+
   handleReadStatus(book) {
     store.updateBook(book);
-    this.setState({books: store.getBooks()})
+    this.setState({ books: store.getBooks() });
   }
   handleDelete(id) {
     store.deleteBook(id);
-    this.setState({books: store.getBooks()})
+    this.setState({ books: store.getBooks() });
   }
-
-
   render() {
     return (
       <div>
         <h1>myLibrary</h1>
         <h3>Add books that you've read or intend to read:</h3>
-        <Table 
-          handleReadStatus={this.handleReadStatus} 
+        <Table
+          handleReadStatus={this.handleReadStatus}
           bookList={this.state.books}
-          handleDelete={this.handleDelete}  
+          handleDelete={this.handleDelete}
         />
         <AddBtn
           handleClick={this.handleAddBookClicked}

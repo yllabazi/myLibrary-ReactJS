@@ -20,11 +20,11 @@ class TableRow extends React.Component {
 class Table extends React.Component {
   render() {
     const bookList = this.props.bookList;
-    const rows = bookList.map((book, index) => {
-      const {title, author, published, pages, read} = book
+    const rows = bookList.map((book) => {
+      const {title, author, published, pages, read, id} = book
       return (
         <TableRow  
-          key={index}
+          key={id}
           title={title}
           author={author}
           published={published}
