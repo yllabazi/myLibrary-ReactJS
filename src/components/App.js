@@ -4,6 +4,7 @@ import Table from "./Table";
 import Form from "./Form";
 import store from '../data-persistance/localStorage'
 
+localStorage.setItem('Books', JSON.stringify([{title: "Power of Habit", author: "Charles Duhigg", published: 2012, pages: 371, read: true}]));
 
 export default class App extends React.Component {
   constructor(props) {
