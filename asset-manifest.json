@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/myLibrary-ReactJS/static/css/main.e8c7a4ae.chunk.css",
-    "main.js": "/myLibrary-ReactJS/static/js/main.5c8539c7.chunk.js",
-    "main.js.map": "/myLibrary-ReactJS/static/js/main.5c8539c7.chunk.js.map",
-    "runtime-main.js": "/myLibrary-ReactJS/static/js/runtime-main.3bd31250.js",
-    "runtime-main.js.map": "/myLibrary-ReactJS/static/js/runtime-main.3bd31250.js.map",
-    "static/js/2.044530ba.chunk.js": "/myLibrary-ReactJS/static/js/2.044530ba.chunk.js",
-    "static/js/2.044530ba.chunk.js.map": "/myLibrary-ReactJS/static/js/2.044530ba.chunk.js.map",
-    "index.html": "/myLibrary-ReactJS/index.html",
-    "precache-manifest.5f96b4273383f8fe1e1258a01f072c8e.js": "/myLibrary-ReactJS/precache-manifest.5f96b4273383f8fe1e1258a01f072c8e.js",
-    "service-worker.js": "/myLibrary-ReactJS/service-worker.js",
-    "static/css/main.e8c7a4ae.chunk.css.map": "/myLibrary-ReactJS/static/css/main.e8c7a4ae.chunk.css.map",
-    "static/js/2.044530ba.chunk.js.LICENSE.txt": "/myLibrary-ReactJS/static/js/2.044530ba.chunk.js.LICENSE.txt"
+    "main.css": "/yllabazi.github.io/myLibrary-ReactJS/static/css/main.e8c7a4ae.chunk.css",
+    "main.js": "/yllabazi.github.io/myLibrary-ReactJS/static/js/main.0558a16c.chunk.js",
+    "main.js.map": "/yllabazi.github.io/myLibrary-ReactJS/static/js/main.0558a16c.chunk.js.map",
+    "runtime-main.js": "/yllabazi.github.io/myLibrary-ReactJS/static/js/runtime-main.78235f38.js",
+    "runtime-main.js.map": "/yllabazi.github.io/myLibrary-ReactJS/static/js/runtime-main.78235f38.js.map",
+    "static/js/2.6d580a42.chunk.js": "/yllabazi.github.io/myLibrary-ReactJS/static/js/2.6d580a42.chunk.js",
+    "static/js/2.6d580a42.chunk.js.map": "/yllabazi.github.io/myLibrary-ReactJS/static/js/2.6d580a42.chunk.js.map",
+    "index.html": "/yllabazi.github.io/myLibrary-ReactJS/index.html",
+    "precache-manifest.de38e9ccdaa918a75caf5dcc328e67b2.js": "/yllabazi.github.io/myLibrary-ReactJS/precache-manifest.de38e9ccdaa918a75caf5dcc328e67b2.js",
+    "service-worker.js": "/yllabazi.github.io/myLibrary-ReactJS/service-worker.js",
+    "static/css/main.e8c7a4ae.chunk.css.map": "/yllabazi.github.io/myLibrary-ReactJS/static/css/main.e8c7a4ae.chunk.css.map",
+    "static/js/2.6d580a42.chunk.js.LICENSE.txt": "/yllabazi.github.io/myLibrary-ReactJS/static/js/2.6d580a42.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3bd31250.js",
-    "static/js/2.044530ba.chunk.js",
+    "static/js/runtime-main.78235f38.js",
+    "static/js/2.6d580a42.chunk.js",
     "static/css/main.e8c7a4ae.chunk.css",
-    "static/js/main.5c8539c7.chunk.js"
+    "static/js/main.0558a16c.chunk.js"
   ]
 }
