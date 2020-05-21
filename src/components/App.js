@@ -4,6 +4,8 @@ import Table from "./Table";
 import Form from "./Form";
 import store from '../data-persistance/localStorage'
 
+store.addBook({title: 'Power of Habit', author: 'Charles Duhigg', published: 2012, pages: 371, read: true});
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -56,7 +58,7 @@ export default class App extends React.Component {
       addBtnVisibility: "visible"
     })
   }
-  //work in progress
+  
   handleReadStatus(book) {
     store.updateBook(book);
     this.setState({books: store.getBooks()})
