@@ -2,8 +2,8 @@ import React from "react";
 import AddBtn from "./AddBook";
 import Table from "./Table";
 import Form from "./Form";
-import store from '../data-persistance/localStorage';
-import db from "../data-persistance/firebase";
+// import store from '../data-persistance/localStorage';
+import store from "../data-persistance/firebase";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ export default class App extends React.Component {
       published: "",
       pages: "",
       read: true,
-      books: this.getBooks(),
+      books: store.getBooks(this),
     };
     this.handleAddBookClicked = this.handleAddBookClicked.bind(this);
     this.handleCloseForm = this.handleCloseForm.bind(this);
@@ -24,27 +24,6 @@ export default class App extends React.Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleReadStatus = this.handleReadStatus.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  getBooks() {
-    let books = [];
-    db.collection("Books")
-      .get()
-      .then((snapshot) => {
-        snapshot.docs.forEach((doc) => {
-          const book = {
-            id: doc.id,
-            title: doc.data().title,
-            author: doc.data().author,
-            published: doc.data().published,
-            pages: doc.data().pages,
-            read: doc.data().read,
-          };
-          books.push(book);
-          this.setState({ books: books });
-        });
-      })
-    return books;
   }
 
   handleAddBookClicked() {
@@ -64,7 +43,7 @@ export default class App extends React.Component {
       author: this.state.author,
       published: this.state.published,
       pages: this.state.pages,
-      read: this.state.read,
+      read: this.state.read === 'true' ? true : false,
     };
     store.addBook(book);
     this.setState({
@@ -73,7 +52,7 @@ export default class App extends React.Component {
       published: "",
       pages: "",
       read: true,
-      books: store.getBooks(),
+      books: store.getBooks(this),
       formVisibility: "hidden",
       addBtnVisibility: "visible",
     });
@@ -81,11 +60,11 @@ export default class App extends React.Component {
 
   handleReadStatus(book) {
     store.updateBook(book);
-    this.setState({ books: store.getBooks() });
+    this.setState({ books: store.getBooks(this) });
   }
   handleDelete(id) {
     store.deleteBook(id);
-    this.setState({ books: store.getBooks() });
+    this.setState({ books: store.getBooks(this) });
   }
   render() {
     return (

@@ -13,4 +13,56 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-export default db;
+
+export default class Storage {
+  //get all books
+  static getBooks(component = '') {
+    let books = [];
+    db.collection("Books")
+      .orderBy('addedAt', 'asc')
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          const book = {
+            id: doc.id,
+            title: doc.data().title,
+            author: doc.data().author,
+            published: doc.data().published,
+            pages: doc.data().pages,
+            read: doc.data().read,
+          };
+          books.push(book);
+          if (component !== '') {
+            component.setState({ books: books });
+          }
+        });
+      })
+      return books;
+  }
+
+  //add a book
+  static addBook(book) {
+    const time = {addedAt: firebase.firestore.FieldValue.serverTimestamp()}
+    const b = {...book, ...time}
+    db.collection('Books').doc().set(b)
+    .then(() => {
+      console.log('Book added successfuly.');
+    })
+  }
+
+  //delete a book
+  static deleteBook(book) {
+    db.collection('Books').doc(book).delete().then(() => {
+      console.log('Book deleted successfuly.');
+    })
+  }
+
+  //toggle read status on a book
+  static updateBook(book) {
+    db.collection('Books').doc(book).update({
+      read: true
+    }).then(() => {
+      console.log('Read status updated successfuly.');
+    })
+  }
+}
