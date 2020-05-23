@@ -2,7 +2,6 @@ import React from "react";
 import AddBtn from "./AddBook";
 import Table from "./Table";
 import Form from "./Form";
-// import store from '../data-persistance/localStorage';
 import store from "../data-persistance/firebase";
 
 export default class App extends React.Component {
@@ -43,7 +42,7 @@ export default class App extends React.Component {
       author: this.state.author,
       published: this.state.published,
       pages: this.state.pages,
-      read: this.state.read === 'true' ? true : false,
+      read: this.state.read === "true" ? true : false,
     };
     store.addBook(book);
     this.setState({
@@ -58,10 +57,9 @@ export default class App extends React.Component {
     });
   }
 
-  handleReadStatus(book) {
-    store.updateBook(book);
-    let b = store.getBooks(this);
-    this.setState({ books: b});
+  handleReadStatus(book, value) {
+    store.updateBook(book, value);
+    this.setState({ books: store.getBooks(this) });
   }
   handleDelete(id) {
     store.deleteBook(id);
