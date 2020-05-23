@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "064ab81bc09529b6cea2c8eb6ee2726a",
+    "revision": "aca398696a12ec05147c51ba0d988c47",
     "url": "/yllabazi/myLibrary-ReactJS.git/index.html"
   },
   {
-    "revision": "39f11383214ac6bd897f",
+    "revision": "6515fd9f0144735fa080",
     "url": "/yllabazi/myLibrary-ReactJS.git/static/css/main.e8c7a4ae.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/yllabazi/myLibrary-ReactJS.git/static/js/2.f1a62eba.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "39f11383214ac6bd897f",
-    "url": "/yllabazi/myLibrary-ReactJS.git/static/js/main.2495fc86.chunk.js"
+    "revision": "6515fd9f0144735fa080",
+    "url": "/yllabazi/myLibrary-ReactJS.git/static/js/main.f8accc7d.chunk.js"
   },
   {
     "revision": "8737654d6b318c16980e",
