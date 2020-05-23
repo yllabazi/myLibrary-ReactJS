@@ -60,7 +60,7 @@ export default class App extends React.Component {
 
   handleReadStatus(book) {
     store.updateBook(book);
-    this.setState({ books: store.getBooks(this) });
+    this.setState({ books: store.getBooks(this)});
   }
   handleDelete(id) {
     store.deleteBook(id);

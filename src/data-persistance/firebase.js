@@ -59,10 +59,14 @@ export default class Storage {
 
   //toggle read status on a book
   static updateBook(book) {
-    db.collection('Books').doc(book).update({
-      read: true
-    }).then(() => {
-      console.log('Read status updated successfuly.');
+    let read;
+    db.collection('Books').doc(book).get().then(b => {
+      read = b.data().read;
+      db.collection('Books').doc(book).update({
+        read: !read,
+      }).then(() => {
+        console.log('Read status updated successfully.');
+      })
     })
   }
 }
