@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/yllabazi/myLibrary-ReactJS.git/precache-manifest.f280a6cb891f0fed10289b7a3ccc3816.js"
+  "/git@github.com:yllabazi/myLibrary-ReactJS.git/precache-manifest.36938a8dd04ca9809597e2305d4346b5.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/yllabazi/myLibrary-ReactJS.git/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/git@github.com:yllabazi/myLibrary-ReactJS.git/index.html"), {
   
   blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
 });
