@@ -1,5 +1,4 @@
 {
-  "homepage": "myLibrary-ReactJS.git",
   "name": "my-library-react",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +11,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+  "homepage": "https://yllabazi.github.io/myLibrary-ReactJS",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
