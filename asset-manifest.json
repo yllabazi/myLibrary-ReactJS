@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/myLibrary-ReactJS.git/static/css/main.e8c7a4ae.chunk.css",
-    "main.js": "/myLibrary-ReactJS.git/static/js/main.34c575ef.chunk.js",
-    "main.js.map": "/myLibrary-ReactJS.git/static/js/main.34c575ef.chunk.js.map",
-    "runtime-main.js": "/myLibrary-ReactJS.git/static/js/runtime-main.4580cc28.js",
-    "runtime-main.js.map": "/myLibrary-ReactJS.git/static/js/runtime-main.4580cc28.js.map",
-    "static/js/2.451a93a3.chunk.js": "/myLibrary-ReactJS.git/static/js/2.451a93a3.chunk.js",
-    "static/js/2.451a93a3.chunk.js.map": "/myLibrary-ReactJS.git/static/js/2.451a93a3.chunk.js.map",
-    "index.html": "/myLibrary-ReactJS.git/index.html",
-    "precache-manifest.27bd4da2adc0a99d5e78fd7f5b34d14e.js": "/myLibrary-ReactJS.git/precache-manifest.27bd4da2adc0a99d5e78fd7f5b34d14e.js",
-    "service-worker.js": "/myLibrary-ReactJS.git/service-worker.js",
-    "static/css/main.e8c7a4ae.chunk.css.map": "/myLibrary-ReactJS.git/static/css/main.e8c7a4ae.chunk.css.map",
-    "static/js/2.451a93a3.chunk.js.LICENSE.txt": "/myLibrary-ReactJS.git/static/js/2.451a93a3.chunk.js.LICENSE.txt"
+    "main.css": "/myLibrary-ReactJS/static/css/main.e8c7a4ae.chunk.css",
+    "main.js": "/myLibrary-ReactJS/static/js/main.34c575ef.chunk.js",
+    "main.js.map": "/myLibrary-ReactJS/static/js/main.34c575ef.chunk.js.map",
+    "runtime-main.js": "/myLibrary-ReactJS/static/js/runtime-main.3bd31250.js",
+    "runtime-main.js.map": "/myLibrary-ReactJS/static/js/runtime-main.3bd31250.js.map",
+    "static/js/2.184ea2d2.chunk.js": "/myLibrary-ReactJS/static/js/2.184ea2d2.chunk.js",
+    "static/js/2.184ea2d2.chunk.js.map": "/myLibrary-ReactJS/static/js/2.184ea2d2.chunk.js.map",
+    "index.html": "/myLibrary-ReactJS/index.html",
+    "precache-manifest.628755d545dcc0b77d81daccbccebccc.js": "/myLibrary-ReactJS/precache-manifest.628755d545dcc0b77d81daccbccebccc.js",
+    "service-worker.js": "/myLibrary-ReactJS/service-worker.js",
+    "static/css/main.e8c7a4ae.chunk.css.map": "/myLibrary-ReactJS/static/css/main.e8c7a4ae.chunk.css.map",
+    "static/js/2.184ea2d2.chunk.js.LICENSE.txt": "/myLibrary-ReactJS/static/js/2.184ea2d2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4580cc28.js",
-    "static/js/2.451a93a3.chunk.js",
+    "static/js/runtime-main.3bd31250.js",
+    "static/js/2.184ea2d2.chunk.js",
     "static/css/main.e8c7a4ae.chunk.css",
     "static/js/main.34c575ef.chunk.js"
   ]
